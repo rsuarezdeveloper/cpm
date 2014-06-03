@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>{% block title %}CPM - Control de Activos Fijos{% endblock %}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Control de Activos Fijos">
+<meta name="author" content="CPM: Raul Suarez">
+<!-- styles -->
+<link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
+<link href="{{asset('css/jquery-ui-1.8.16.custom.css')}}" rel="stylesheet">
+<link href="{{asset('css/jquery.jqplot.css')}}" rel="stylesheet">
+<link href="{{asset('css/prettify.css')}}" rel="stylesheet">
+<link href="{{asset('css/elfinder.min.css')}}" rel="stylesheet">
+<link href="{{asset('css/elfinder.theme.css')}}" rel="stylesheet">
+<link href="{{asset('css/fullcalendar.css')}}" rel="stylesheet">
+<link href="{{asset('js/plupupload/jquery.plupload.queue/css/jquery.plupload.queue.css')}}" rel="stylesheet">
+<link href="{{asset('css/styles.css')}}" rel="stylesheet">
+<link href="{{asset('css/bootstrap-responsive.css')}}" rel="stylesheet">
+<link href="{{asset('css/icons-sprite.css')}}" rel="stylesheet">
+<link id="themes" href="{{asset('css/theme-light-blue.css')}}" rel="stylesheet"> 
+<link href="{{asset('css/select2.css')}}" rel="stylesheet">
+<link href="{{asset('css/select2-bootstrap.css')}}" rel="stylesheet">
+
+{% block stylesheets %}{% endblock %}
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="{{asset('css/ie/ie7.css')}}" />
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="{{asset('css/ie/ie8.css')}}" />
+<![endif]-->
+<!--[if IE 9]>
+<link rel="stylesheet" type="text/css" href="{{asset('css/ie/ie9.css')}}" />
+<![endif]-->
+<!--fav and touch icons -->
+<!-- <link rel="shortcut icon" href="ico/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png"> -->
+</head>
+<body>
+<!-- remiendo -->
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner top-nav">
+    <div class="container">
+      <div class="branding">
+        <div class="logo"> <a href="javascript:void(0);"></a> </div>
+      </div>
+      {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+			<ul class="nav pull-right">
+				
+		        <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle " href="#"> {{app.user.nombre ? app.user.nombre : app.user.username}}&nbsp;<i class="icon-user icon-white"></i><b class="caret"></b></a>
+		          <ul class="dropdown-menu">
+		            <!-- <li><a href="#"><i class="icon-envelope"></i> Notifications <span class="alert-noty">15</span></a></li> 
+		            <li><a href="#"><i class="icon-briefcase"></i> My Account</a></li>
+		            <li><a href="#"><i class="icon-file"></i> View Profile</a></li>-->
+		            <li><a href="#"><i class="icon-pencil"></i> Editar Perfil</a></li>
+		            <!-- <li><a href="#"><i class="icon-cog"></i> Account Settings</a></li> -->
+		            <li class="divider"></li>
+		            <li><a href="#"><i class="icon-off"></i><strong> Salir</strong></a></li>
+		          </ul>
+		        </li>
+			</ul>  
+      <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="nav-icon cog"></i> Configuración <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="{{path('municipio')}}">Municipios</a></li>
+              <li><a href="{{path('departamento')}}">Departamentos</a></li>
+              <li><a href="{{path('marcaequipo')}}">Marcas</a></li>
+              <li><a href="{{path('modeloequipo')}}">Modelos</a></li>
+            </ul>
+          </li>
+          <!-- mas menus -->
+        </ul>
+        {%endif%}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- fin remiendo -->
+<!-- end header -->
+<div id="main-content">
+	<div class="container">
+		<div class="row">
+			<div >
+				{%block body%}{%endblock%}
+			</div>
+		</div>
+	</div>
+</div>
+	
+<!-- javascript
+================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="{{asset('js/jquery.js')}}"></script> 
+<script src="{{asset('js/jquery-ui-1.8.16.custom.min.js')}}"></script> 
+<script src="{{asset('js/jquery.ui.touch-punch.js')}}"></script> 
+<script src="{{asset('js/bootstrap.js')}}"></script> 
+<script src="{{asset('js/prettify.js')}}"></script> 
+<script src="{{asset('js/jquery.sparkline.min.js')}}"></script> 
+<script src="{{asset('js/jquery.nicescroll.min.js')}}"></script> 
+<script src="{{asset('js/accordion.jquery.js')}}"></script> 
+<script src="{{asset('js/smart-wizard.jquery.js')}}"></script> 
+<script src="{{asset('js/vaidation.jquery.js')}}"></script> 
+<script src="{{asset('js/jquery-dynamic-form.js')}}"></script> 
+<script src="{{asset('js/fullcalendar.js')}}"></script> 
+<script src="{{asset('js/raty.jquery.js')}}"></script> 
+<script src="{{asset('js/jquery.noty.js')}}"></script> 
+<script src="{{asset('js/jquery.cleditor.min.js')}}"></script> 
+<script src="{{asset('js/data-table.jquery.js')}}"></script> 
+<script src="{{asset('js/TableTools.min.js')}}"></script> 
+<script src="{{asset('js/ColVis.min.js')}}"></script> 
+<script src="{{asset('js/plupload.full.js')}}"></script> 
+<script src="{{asset('js/elfinder/elfinder.min.js')}}"></script> 
+<script src="{{asset('js/chosen.jquery.js')}}"></script> 
+<script src="{{asset('js/uniform.jquery.js')}}"></script> 
+<script src="{{asset('js/jquery.tagsinput.js')}}"></script> 
+<script src="{{asset('js/jquery.colorbox-min.js')}}"></script> 
+<script src="{{asset('js/check-all.jquery.js')}}"></script> 
+<script src="{{asset('js/inputmask.jquery.js')}}"></script> 
+<script src="http://bp.yahooapis.com/2.4.21/browserplus-min.js"></script> 
+<script src="{{asset('js/plupupload/jquery.plupload.queue/jquery.plupload.queue.js')}}"></script> 
+<script src="{{asset('js/excanvas.min.js')}}"></script> 
+<script src="{{asset('js/jquery.jqplot.min.js')}}"></script> 
+<script src="{{asset('js/chart/jqplot.highlighter.min.js')}}"></script> 
+<script src="{{asset('js/chart/jqplot.cursor.min.js')}}"></script> 
+<script src="{{asset('js/chart/jqplot.dateAxisRenderer.min.js')}}"></script> 
+<script src="{{asset('js/custom-script.js')}}"></script> 
+<script src="{{asset('js/select2.js')}}"></script> 
+<script src="{{asset('js/select2_locale_es.js')}}"></script>
+
+<!-- html5.js for IE less than 9 --> 
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--> 
+<script src="{{asset('js/respond.min.js')}}"></script>
+<script src="{{asset('js/ios-orientationchange-fix.js')}}"></script>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

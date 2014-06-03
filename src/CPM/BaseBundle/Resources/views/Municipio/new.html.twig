@@ -1,0 +1,11 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Crear Municipio</h1>
+
+    {{ form(form) }}
+
+        <div class="form-actions">
+        <a href="{{ path('municipio') }}" class="btn btn-mini">
+            Cancelar        </a>
+{% endblock %}

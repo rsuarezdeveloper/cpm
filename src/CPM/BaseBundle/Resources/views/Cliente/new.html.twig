@@ -1,0 +1,12 @@
+{% extends '::base.html.twig' %}
+{% block stylesheets %} {{ form_stylesheet(form) }} {%endblock%}
+{% block body -%}
+    <h1>Crear Cliente</h1>
+
+    {{ form(form) }}
+
+        <div class="form-actions">
+        <a href="{{ path('cliente') }}" class="btn btn-mini">
+            Cancelar        </a>
+{% endblock %}
+{%block javascripts%}{{ form_javascript(form) }} {%endblock%}

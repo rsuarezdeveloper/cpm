@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Editar Modelo </h1>
+	{{ form_start(edit_form) }}
+	    {{ form_errors(edit_form) }}
+	
+	    {{ form_row(edit_form.marca) }}
+	    {{ form_row(edit_form.descripcion) }} <img  class="img-polaroid" style="width:140px; heigth:140px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAYAAACuwEE+AAAEaklEQVR4nO3Y24rqSACF4f3+j1IQAiEgEhBBggjSiEhGHHEkSAgh1CusuUhsD90we20Y+vRffNBtRSvob1XirxijgN/166NPAF8LwcBCMLAQDCwEAwvBwEIwsBAMLAQDC8HAQjCwEAwsBAMLwcBCMLAQDCwEAwvBwEIwsBAMLAQDC8HAQjCwEAwsBAMLwcBCMLAQDCwEAwvBwEIwsBAMLAQDC8HAQjCwEAwsBAMLwcBCMLAQDCwEAwvBwEIwsBAMLAQDC8HAQjCwEAwsBAMLwcBCMLAQDCwEAwvBwEIwsBAMLAQDC8HAQjCwEAwsBAMLwcBCMLAQDCzfIph2v1QSUq2P7Zux82auLMuUF2u142OX/Up5kihJEmWTUqfu9+faLSYK6VSH9nms0arIlWX53Xl02pVTJUmiJElVLCv1n+D9+rHBtPVRu81SeQgKIWixbx6PaSpl41hISzUxKtYbJSEohERZlg5j2fI1pvf1Oh8qvZTT4fiQqXoKpt4U49jtPI6ryfBYkilLhrHp+vTh79uPDWY/T14/pLfB9HqZ3o1npdoYdVzmCiGoeKkVY6tFNsSz+edvzfJceT7Vto6KzU5FnivPZzp2jRZ384SQaX8fTHd4jfZ2Hhct0qAQUm2bqHgZQ/3POD+3Lx1M33fq+k7VInsTTLsvFUJQud1oehfMocwfjr3/fz++TjKZazEdVp+s3A9zdZ36vh4DewxmN0sUQqGqWt5eu90Pq1s6zBu78f9Q6NR//Hv3I4O5eo4g9mfNQlCYbhTjafj2Z0t1sVWZjd/6S//Oc2vNkruVJF3o8jBXq+VTMN1xpRCC5lWreB7+Lg+dYrcf5x2Dic0499vt7Cv5lsFcV5dsvtb2ZTFsBclE6+qsaj6sIuV+uDA9LJ+eW81fgykPzxfRz8G0WuXjNvSy1XoxXLPk85WO//w1rCjXYF63rYkOxkX2Z/NNg1k8XNvczLUrs3FFGI5dT4ax1bFTjI3K/O74/Pl6420wZfrePEGz6qAiBIWQ69BHxa563KK+qG8ZTOw7NU2jpmnVnLfDB5UUOnW31Sekhdar62pS6ByjTuvxLiibapK+d1dzC+a6rXRtM8zVdjrvhtebb0/q4/XaJiibLbUshlDTefXh7xfBjMGUz7fVMd62gnylLkbF2Gm7yO9Wg1SrQ6N42Skdb7fXdVR/XI7j+d0F7jWYiY7vbCvdoXzY7mJ71Ox+Bcrm1m8+n9G3COZPtJdadV2r+d8/wE6XulZdX778j3Yx/uBg8GcIBhaCgYVgYCEYWAgGFoKBhWBgIRhYCAYWgoGFYGAhGFgIBhaCgYVgYCEYWAgGFoKBhWBgIRhYCAYWgoGFYGAhGFgIBhaCgYVgYCEYWAgGFoKBhWBgIRhYCAYWgoGFYGAhGFgIBhaCgYVgYCEYWAgGFoKBhWBgIRhYCAYWgoGFYGAhGFgIBhaCgYVgYCEYWAgGFoKBhWBgIRhYCAYWgoGFYGAhGFgIBhaCgYVgYCEYWP4FLa47Lg/4bUIAAAAASUVORK5CYII=">
+	    <hr/>
+	{{ form_end(edit_form) }}
+        <div class="form-actions">
+        <a href="{{ path('modeloequipo') }}" class="btn btn-mini">
+            Cancelar        </a>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends '::base.html.twig' %}
+{% block stylesheets %} {{ form_stylesheet(form) }} {%endblock%}
+{% block body -%}
+    <h1>Crear Sucursal</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('sucursal') }}">
+            Cancelar
+        </a>
+    </li>
+</ul>
+{% endblock %}
+
+{%block javascripts%}{{ form_javascript(form) }} {%endblock%}
